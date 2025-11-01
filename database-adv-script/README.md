@@ -1,3 +1,5 @@
+# Advanced Database Scripts
+
 This directory contains SQL scripts demonstrating mastery of **JOIN operations** for the Airbnb Clone database, as part of the ALX Software Engineering program.
 
 ## 📁 Contents
