@@ -19,3 +19,11 @@ CREATE INDEX idx_booking_property_id ON booking(property_id);
 
 -- 7. Index on booking.start_date (for date-range queries and partitioning prep)
 CREATE INDEX idx_booking_start_date ON booking(start_date);
+
+
+EXPLAIN SELECT * FROM booking 
+WHERE property_id = 'prop_123' AND start_date BETWEEN '2025-12-01' AND '2025-12-31';
+-- Output: "type: ALL, rows: 10240, Extra: Using where"
+
+
+CREATE INDEX idx_booking_property_date ON booking(property_id, start_date);
