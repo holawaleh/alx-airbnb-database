@@ -3,7 +3,6 @@
 ## Objective
 Continuously monitor query performance, identify bottlenecks, and refine the schema to optimize the Airbnb Clone database.
 
----
 
 ## 1. Monitored Queries
 
