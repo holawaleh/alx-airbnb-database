@@ -35,8 +35,8 @@ SELECT
     r.comment,
     r.created_at AS review_date
 FROM property p
-LEFT JOIN review r ON p.property_id = r.property_id;
-
+LEFT JOIN review r ON p.property_id = r.property_id
+ORDER BY p.property_id ASC;
 
 -- 3. FULL OUTER JOIN: Retrieve all users and all bookings, 
 -- even if the user has no booking OR a booking is not linked to a user.
