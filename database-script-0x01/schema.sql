@@ -4,6 +4,7 @@ CREATE TABLE user(
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20)  -- starts with +234
     role ENUM('guest', 'host', 'admin') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -15,6 +16,8 @@ CREATE TABLE property(
     host_id CHAR(36) NOT NULL,
     FOREIGN KEY (host_id) REFERENCES user(user_id),
     name VARCHAR(255) NOT NULL,
+    location VARCHAR(255),
+    description TEXT,
     price_per_night DECIMAL(10, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
